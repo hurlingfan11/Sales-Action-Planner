@@ -13,5 +13,4 @@
     <string name="date_error_check_again">The date you entered is in the past.</string>
     <string name="description">Description</string>
     <string name="reminder">Reminder</string>
-    <string name="title_activity_sales_action_planner">SalesActionPlannerActivity</string>
 </resources>
