@@ -14,4 +14,6 @@
     <string name="description">Description</string>
     <string name="reminder">Reminder</string>
     <string name="title_activity_sales_action_planner">SalesActionPlannerActivity</string>
+    <string name="chk_done">Check Done</string>
+
 </resources>

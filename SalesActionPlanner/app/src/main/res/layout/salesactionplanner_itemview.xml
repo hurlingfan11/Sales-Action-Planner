@@ -33,7 +33,7 @@
                 <TextView
                     android:layout_alignParentRight="true"
                     tools:ignore="MissingPrefix"
-                    android:id="@+id/toDoListItemTextview"
+                    android:id="@+id/itemview_title_Textview"
                     android:padding="8dp"
                     android:maxLines="2"
                     android:lines="2"
@@ -48,7 +48,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/todoListItemTimeTextView"
+                    android:id="@+id/itemview_owner_TextView"
                     android:padding="8dp"
                     android:textColor="?attr/colorAccent"
                     android:textSize="12sp"

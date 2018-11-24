@@ -1,41 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".SalesActionPlannerActivity"
-    tools:showIn="@layout/activity_sales_action_planner"
-    android:orientation="vertical"
     android:padding="8dp"
     >
 
     <EditText
-        android:id="@+id/detail_title_edittext"
+        android:id="@+id/dialog_title_edittext"
         android:hint="Title!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/detail_description_edittext"
+        android:id="@+id/dialog_description_edittext"
         android:hint="Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/detail_owner_edittext"
+        android:id="@+id/dialog_owner_edittext"
         android:hint="Owner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <CheckBox
-        android:id="@+id/detail_chkWindows"
+        android:id="@+id/chkWindows"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chk_done" />
-
 
 </LinearLayout>

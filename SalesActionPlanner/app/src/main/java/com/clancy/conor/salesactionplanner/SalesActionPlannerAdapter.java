@@ -17,8 +17,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class SalesActionPlannerAdapter extends RecyclerView.Adapter<SalesActionPlannerAdapter.SalesActionPlannerViewHolder>
 {
@@ -57,17 +59,22 @@ public class SalesActionPlannerAdapter extends RecyclerView.Adapter<SalesActionP
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SalesActionPlannerViewHolder photoBucketViewHolder, int i) {
+    public void onBindViewHolder(@NonNull SalesActionPlannerViewHolder salesActionPlannerViewHolder, int i) {
         DocumentSnapshot ds = mSalesActionPlannerSnapShots.get(i);
         // Get() returns a generic object so we need to cast it to Strings as we know that is what they are
         // Get the caption
-        String caption = (String) ds.get(Constants.KEY_CAPTION);
+        String owner = (String) ds.get(Constants.KEY_OWNER);
         // Get the Image URL
-        String imageurl = (String) ds.get(Constants.KEY_IMAGE_URL);
+        String description = (String) ds.get(Constants.KEY_DESCRIPTION);
+
+        String title = (String) ds.get(Constants.KEY_TITLE);
 
         // want to set the two texts
-        photoBucketViewHolder.mCaptionTextView.setText(caption);
-        //photoBucketViewHolder.mImageURLTextView.setText(imageurl);
+        //
+        salesActionPlannerViewHolder.mTitleTextView.setText(title);
+        salesActionPlannerViewHolder.mOwnerTextView.setText(owner);
+        salesActionPlannerViewHolder.mDescriptionTextView.setText(description);
+
 
     }
 
@@ -79,16 +86,19 @@ public class SalesActionPlannerAdapter extends RecyclerView.Adapter<SalesActionP
 
     class SalesActionPlannerViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView mCaptionTextView;
-        //private TextView mImageURLTextView;
+        private TextView mOwnerTextView;
+        private TextView mDescriptionTextView;
+        private TextView mTitleTextView;
 
         //Default Constructor
         public SalesActionPlannerViewHolder(@NonNull View itemView) {
             super(itemView);
 
-           /* // only looking inside itemview
-            mCaptionTextView = itemView.findViewById(R.id.itemview_caption);
-            //mImageURLTextView = itemView.findViewById(R.id.itemview_imageurl);
+           // only looking inside itemview
+            mOwnerTextView = itemView.findViewById(R.id.itemview_owner_TextView);
+            mTitleTextView = itemView.findViewById(R.id.itemview_title_Textview);
+            mDescriptionTextView = itemView.findViewById(R.id.itemview_title_Textview);
+            //mDescriptionTextView = itemView.findViewById(R.id.itemview_description_Textview);
 
             // when someone selects an itemview, take an action
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -96,18 +106,18 @@ public class SalesActionPlannerAdapter extends RecyclerView.Adapter<SalesActionP
                 public void onClick(View v) {
 
                     // Want to start an activity, to start an activity, need the context
-                    DocumentSnapshot ds = mPhotoBucketSnapShots.get(getAdapterPosition());
+                    DocumentSnapshot ds = mSalesActionPlannerSnapShots.get(getAdapterPosition());
                     Context c = v.getContext();
                     // to start an activity need an intent, so make an intent
 
-                    Intent intent = new Intent(c, PhotoBucketDetailActivity.class);
+                    Intent intent = new Intent(c, SalesActionPlannerActivity.class);
                     // We need to pass data in one direction, so use doc_id
                     intent.putExtra(Constants.EXTRA_DOC_ID, ds.getId());
                     // starts the activity
                     c.startActivity(intent);
 
                 }
-            });*/
+            });
         }
     }
 
