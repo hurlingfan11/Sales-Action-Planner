@@ -15,27 +15,34 @@
 
     <EditText
         android:id="@+id/detail_title_edittext"
-        android:hint="Title!"
+        android:hint="Action Title:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/detail_description_edittext"
-        android:hint="Description"
+        android:hint="Description:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/detail_owner_edittext"
-        android:hint="Owner"
+        android:hint="Owner:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
+      <EditText
+        android:id="@+id/calendar_edittext"
+        android:hint="Complete By Date:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
 
     <CheckBox
         android:id="@+id/detail_chkWindows"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/chk_done" />
-
 
 </LinearLayout>

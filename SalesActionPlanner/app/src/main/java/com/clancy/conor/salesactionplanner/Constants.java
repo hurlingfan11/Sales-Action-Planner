@@ -1,5 +1,7 @@
 package com.clancy.conor.salesactionplanner;
 
+import java.text.DateFormat;
+
 public class Constants {
 
     public static final String TAG = "dbUser";
@@ -7,6 +9,7 @@ public class Constants {
     public static final String KEY_OWNER = "owner";
     public static final String KEY_DESCRIPTION = "description";
     public static final String KEY_TITLE = "title";
+    public static final String KEY_DATE="completebydate";
     public static final String EXTRA_DOC_ID = "document_id";
     public static final String KEY_CREATED = "created";
 

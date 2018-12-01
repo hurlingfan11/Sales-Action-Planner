@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CalendarView;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +34,7 @@ public class SalesActionPlannerActivity extends AppCompatActivity {
     private TextView mOwnerTextView;
     private TextView mTitleTextView;
     private TextView mDescriptionTextView;
+    private TextView mCommitDateTextView;
     //private TextView mTitleTextView;
 
     // DocRef & DocSnapShots
@@ -47,6 +51,9 @@ public class SalesActionPlannerActivity extends AppCompatActivity {
         mOwnerTextView = findViewById(R.id.detail_owner_edittext);
         mTitleTextView = findViewById(R.id.detail_title_edittext);
         mDescriptionTextView = findViewById(R.id.detail_description_edittext);
+        mCommitDateTextView = findViewById(R.id.calendar_edittext);
+
+        GregorianCalendar calendar = new GregorianCalendar();
 
         Intent receivedIntent = getIntent();
         //FRom received intent need to pull out the doc_id
@@ -70,6 +77,7 @@ public class SalesActionPlannerActivity extends AppCompatActivity {
                     mOwnerTextView.setText((String) documentSnapshot.get(Constants.KEY_OWNER));
                     mTitleTextView.setText((String) documentSnapshot.get(Constants.KEY_TITLE));
                     mDescriptionTextView.setText((String) documentSnapshot.get(Constants.KEY_DESCRIPTION));
+                    mCommitDateTextView.setText((String)documentSnapshot.get(Constants.KEY_DATE));
                     //
                     // Ion.with(mPhotoBucketImageView).load((String) documentSnapshot.get(Constants.KEY_IMAGE_URL));
                     //mPhotoBucketImageView.setImageResource((String)documentSnapshot.get(Constants.KEY_MOVIE));
@@ -97,10 +105,15 @@ public class SalesActionPlannerActivity extends AppCompatActivity {
             final TextView mOwnerDialogEditText = view.findViewById(R.id.dialog_owner_edittext);
             final TextView mTitleDialogEditText = view.findViewById(R.id.dialog_title_edittext);
             final TextView mDescriptionDialogEditText = view.findViewById(R.id.dialog_description_edittext);
+            final TextView mCommitDateEditText = view.findViewById(R.id.dialog_date_textview);
+            final CheckBox completeCheckBox = view.findViewById(R.id.chkWindows);
+            final CalendarView commitDateCalendarView = view.findViewById(R.id.calendar_view);
+            final GregorianCalendar calendar = new GregorianCalendar();
 
             mOwnerDialogEditText.setText((String) mDocSnapShot.get(Constants.KEY_OWNER));
             mTitleDialogEditText.setText((String) mDocSnapShot.get(Constants.KEY_TITLE));
             mDescriptionDialogEditText.setText((String) mDocSnapShot.get(Constants.KEY_DESCRIPTION));
+            mCommitDateEditText.setText((String) mDocSnapShot.get(Constants.KEY_DATE));
 
             builder.setTitle("Edit Sales Action Planner");
 
@@ -108,30 +121,30 @@ public class SalesActionPlannerActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
 
-                    Map<String, Object> mq = new HashMap<>();
+                    Map<String, Object> insertData = new HashMap<>();
 
                     if(mOwnerDialogEditText.getText().toString() != null && !mOwnerDialogEditText.getText().toString().isEmpty())
                     {
-                        mq.put(Constants.KEY_OWNER, mOwnerDialogEditText.getText().toString());
+                        insertData.put(Constants.KEY_OWNER, mOwnerDialogEditText.getText().toString());
                     }else{
                         Toast.makeText(getApplicationContext(), "Please fill out the owner field!", Toast.LENGTH_LONG).show();
                     }
 
                     if(mTitleDialogEditText.getText().toString() != null && !mTitleDialogEditText.getText().toString().isEmpty())
                     {
-                        mq.put(Constants.KEY_TITLE, mTitleDialogEditText.getText().toString());
+                        insertData.put(Constants.KEY_TITLE, mTitleDialogEditText.getText().toString());
                     }else{
                         Toast.makeText(getApplicationContext(), "Please fill out the title field!", Toast.LENGTH_LONG).show();
                     }
 
                     if(mDescriptionDialogEditText.getText().toString() != null && !mDescriptionDialogEditText.getText().toString().isEmpty())
                     {
-                        mq.put(Constants.KEY_TITLE, mDescriptionDialogEditText.getText().toString());
+                        insertData.put(Constants.KEY_TITLE, mDescriptionDialogEditText.getText().toString());
                     }else{
                         Toast.makeText(getApplicationContext(), "Please fill out the description field!", Toast.LENGTH_LONG).show();
                     }
 
-                    mDocRef.update(mq);
+                    mDocRef.update(insertData);
 
                 }
             });

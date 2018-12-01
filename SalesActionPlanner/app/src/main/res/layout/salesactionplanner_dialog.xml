@@ -1,29 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    >
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <EditText
         android:id="@+id/dialog_title_edittext"
-        android:hint="Title!"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Title!" />
 
     <EditText
         android:id="@+id/dialog_description_edittext"
-        android:hint="Description"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Description" />
 
     <EditText
         android:id="@+id/dialog_owner_edittext"
-        android:hint="Owner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Owner" />
+
+
+
+    <!-- Text box for delivery date -->
+    <TextView
+        android:id="@+id/dialog_date_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Complete_by_date" />
+
+    <CalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:showWeekNumber="false" />
 
     <CheckBox
         android:id="@+id/chkWindows"

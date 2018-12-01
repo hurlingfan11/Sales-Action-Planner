@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sales Action Planner Android App</string>
+    <string name="app_name">Sales Action Planner</string>
     <string name="action_settings">Settings</string>
     <string name="no_to_dos">You don\'t have any todos</string>
     <string name="title">Title</string>
@@ -13,7 +13,8 @@
     <string name="date_error_check_again">The date you entered is in the past.</string>
     <string name="description">Description</string>
     <string name="reminder">Reminder</string>
-    <string name="title_activity_sales_action_planner">SalesActionPlannerActivity</string>
+    <string name="title_activity_sales_action_planner">Sales Action Planner</string>
     <string name="chk_done">Check Done</string>
-
+    <string name="Complete_by_date">Complete By:</string>
 </resources>
+
