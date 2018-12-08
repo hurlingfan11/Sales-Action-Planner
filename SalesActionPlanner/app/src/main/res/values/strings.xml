@@ -16,5 +16,16 @@
     <string name="title_activity_sales_action_planner">Sales Action Planner</string>
     <string name="chk_done">Check Done</string>
     <string name="Complete_by_date">Complete By:</string>
+    <string name="choose_an_item">Choose An Action!</string>
+    <string name="remove_all">Remove All</string>
+    <string name="action_return">Return</string>
+    <string name ="action_about">About</string>
+    <string name="app_version">Version Rev 0.9</string>
+    <string name="made_by">Made By: Conor Clancy</string>
+    <string name="email_address">Email: conor.clancy@outlook.com </string>
+
+
+
 </resources>
+
 

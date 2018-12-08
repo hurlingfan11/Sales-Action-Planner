@@ -13,4 +13,13 @@
     <string name="date_error_check_again">The date you entered is in the past.</string>
     <string name="description">Description</string>
     <string name="reminder">Reminder</string>
+    <string name="title_activity_sales_action_planner">Sales Action Planner</string>
+    <string name="chk_done">Check Done</string>
+    <string name="Complete_by_date">Complete By:</string>
+    <string name="choose_an_item">Choose An Action!</string>
+    <string name="remove_all">Remove All</string>
+    <string name="action_return">Return</string>
+    <string name="app_version">Version</string>
+    <string name="made_by">Made By: </string>
+    <string name="email_address">Email: </string>
 </resources>

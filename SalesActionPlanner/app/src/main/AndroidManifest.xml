@@ -22,7 +22,8 @@
         <activity
             android:name=".SalesActionPlannerActivity"
             android:label="@string/title_activity_sales_action_planner"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".About_Activity"></activity>
     </application>
 
 </manifest>
